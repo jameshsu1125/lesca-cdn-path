@@ -18,7 +18,7 @@ cdn_install('https://dlcdnwebimgs.asus.com/files/media/6570DD19-B43C-4496-9A24-5
 
 # Methods
 
-| method           | options |        description         | default |
-| :--------------- | :-----: | :------------------------: | ------: |
-| cdn_install(url) |   url   |     set absolute path      |         |
-| Path( require )  | require | relative path(file-loader) |         |
+| method           | options |         description          | default |
+| :--------------- | :-----: | :--------------------------: | ------: |
+| cdn_install(url) |   url   | set absolute path (run once) |         |
+| Path( require )  | require |  relative path(file-loader)  |         |
