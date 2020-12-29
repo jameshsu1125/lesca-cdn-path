@@ -3,21 +3,22 @@
 # Installation
 
 ```sh
-$ npm install <package> --save
+$ npm install lesca-cdn-path --save
 ```
 
 # Usage
 
 ```javascript
-import foo from 'foo';
+import { cdn_install, Path } from 'lesca-cdn-path';
+
+cdn_install('https://dlcdnwebimgs.asus.com/files/media/6570DD19-B43C-4496-9A24-53CBFB320D9B/');
+
+<img src={Path(require('./img0.png'))} />; // localhost => './img0.png'; not localhost => 'https://dlcdnwebimgs.asus.com/files/media/6570DD19-B43C-4496-9A24-53CBFB320D9B/img0.png';
 ```
 
 # Methods
 
-| method | options | description | default |
-| :----- | :-----: | :---------: | ------: |
-
-# Properties
-
-| Properties | type | description | default |
-| :--------- | :--: | :---------: | ------: |
+| method           | options |        description         | default |
+| :--------------- | :-----: | :------------------------: | ------: |
+| cdn_install(url) |   url   |     set absolute path      |         |
+| Path( require )  | require | relative path(file-loader) |         |
