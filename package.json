@@ -1,6 +1,6 @@
 {
 	"name": "lesca-cdn-path",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "relative path to absolute path",
 	"main": "lib/index.js",
 	"scripts": {
@@ -15,7 +15,8 @@
 	"keywords": [
 		"lesca",
 		"衝康吉",
-		"jameshsu1125"
+		"jameshsu1125",
+		"CDN"
 	],
 	"license": "MIT",
 	"devDependencies": {
