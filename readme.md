@@ -2,7 +2,7 @@
 
 # Why use it.
 
-Use it when image is separated from `html`.
+Use it when image is separated from the `server`.
 
 # Installation
 
@@ -15,9 +15,18 @@ npm install lesca-cdn-path --save
 As a Node module: install in entry js.
 
 ```javascript
-import { install } from 'lesca-cdn-path';
+import { install, pth, config } from 'lesca-cdn-path';
 
 install('https://cdn.hostname.com/files/');
+```
+
+setup mode
+
+```javascript
+import { config } from 'lesca-cdn-path';
+
+// ? I will test at 'localhost';
+config.mode = 'localhost'; // default is 'cdn'
 ```
 
 In the compnenet
@@ -31,7 +40,7 @@ const component = () => <img src={path(require('./img/image.jpg'))} />;
 // http://localhost:8080/img/image.jpg => https://cdn.hostname.com/files/img/image.jpg
 ```
 
-- use `ES6`
+- use `import`
 
 ```javascript
 import { path } from 'lesca-cdn-path';
@@ -52,9 +61,9 @@ const component = () => <img src={path(Image)} />;
 
 ### Properties
 
-| Properties                                             | description  | default |
-| :----------------------------------------------------- | :----------: | ------: |
-| config.enable:<span style='color:gray;'>boolean</span> | use cdn file |    true |
+| Properties                                         |            description             | default |
+| :------------------------------------------------- | :--------------------------------: | ------: |
+| config.mode:<span style='color:gray;'>sting</span> | url loader mode(`cdn`,`localhost`) |   'cdn' |
 
 ### Features
 

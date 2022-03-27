@@ -1,11 +1,9 @@
 const config = {
-	enable: true,
+	mode: 'cdn',
 };
 
-const { hostname } = window.location;
-
 const messages = {
-	unset: 'CDN path has not been set. Please use [install] to set it.',
+	unset: 'CDN path has not been installed. Please use [install] to set it up.',
 };
 
 const install = (path) => {
@@ -13,17 +11,28 @@ const install = (path) => {
 };
 
 const path = (relativePath) => {
+	const { path, mode } = config;
+
 	const p = typeof relativePath === 'object' ? relativePath.default : relativePath;
-	if (!config.path) {
-		console.log(messages.unset);
+	if (!path) {
+		console.log(
+			`%c[lesca-cdn-path]%c${messages.unset}`,
+			'color:#fff; background-color:#42a5f5;',
+			'color:#fff; background-color:#f57c00;'
+		);
 		return p;
 	}
 
-	if (!config.enable) return p;
+	switch (mode) {
+		default:
+		case 'cdn':
+			return `${path}${p.split('./').join('')}`;
 
-	return false ? p : `${config.path}${p.split('./').join('')}`;
+		case 'localhost':
+			return p;
+	}
 
-	//hostname === 'localhost' || hostname.indexOf('github') > 0
+	// ? hostname === 'localhost' || hostname.indexOf('github') > 0
 };
 
 const Path2CDN = { install, path, config };
