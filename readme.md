@@ -15,7 +15,7 @@ npm install lesca-cdn-path --save
 As a Node module: install in entry js.
 
 ```javascript
-import { install, pth, config } from 'lesca-cdn-path';
+import { install } from 'lesca-cdn-path';
 
 install('https://cdn.hostname.com/files/');
 ```
@@ -25,7 +25,7 @@ setup mode
 ```javascript
 import { config } from 'lesca-cdn-path';
 
-// ? I will test at 'localhost';
+// ? test at 'localhost'?;
 config.mode = 'localhost'; // default is 'cdn'
 ```
 
@@ -61,9 +61,9 @@ const component = () => <img src={path(Image)} />;
 
 ### Properties
 
-| Properties                                         |            description             | default |
-| :------------------------------------------------- | :--------------------------------: | ------: |
-| config.mode:<span style='color:gray;'>sting</span> | url loader mode(`cdn`,`localhost`) |   'cdn' |
+| Properties                                         |   description    |      options       | default |
+| :------------------------------------------------- | :--------------: | :----------------: | ------: |
+| config.mode:<span style='color:gray;'>sting</span> | url loader mode. | `cdn`, `localhost` |   'cdn' |
 
 ### Features
 
